@@ -72,7 +72,7 @@ export default {
     retreiveData() {
       axios
         .get(
-          `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=9ec571f86697d07ac&q=${this.data}`
+          `https://www.googleapis.com/customsearch/v1?key=${process.env.API}&cx=9ec571f86697d07ac&q=${this.data}`
         )
         .then((response) => {
           this.employees = response.data;
@@ -86,7 +86,7 @@ export default {
       
       axios
         .get(
-          `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=9ec571f86697d07ac&q=${this.searchQuery}`
+          `https://www.googleapis.com/customsearch/v1?key=${process.env.API}&cx=9ec571f86697d07ac&q=${this.searchQuery}`
         )
         .then((response) => {
           this.employees = response.data;
